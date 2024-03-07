@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=3 uid="uid://bi0cc2vr2iyhv"]
+
+[ext_resource type="Script" path="res://Title_Menu.gd" id="1_jlwuo"]
+[ext_resource type="Texture2D" uid="uid://duhqvh0ldc32t" path="res://Images/game-background-cartoon-house-in-an-icy-forest-vector.jpg" id="2_8t2xt"]
+[ext_resource type="AudioStream" uid="uid://dstn5iwdihvmq" path="res://pleasant-violin-notification-2-186536.mp3" id="2_ohoxw"]
+
+[node name="Title_Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jlwuo")
+
+[node name="Game-background-cartoon-house-in-an-icy-forest-vector" type="Sprite2D" parent="."]
+position = Vector2(590, 359)
+scale = Vector2(0.602083, 0.590604)
+texture = ExtResource("2_8t2xt")
+
+[node name="Quit_Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 366.0
+offset_top = 356.0
+offset_right = 531.0
+offset_bottom = 415.0
+scale = Vector2(2.69889, 1.8841)
+text = "Quit
+"
+
+[node name="Start_Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 366.0
+offset_top = 199.0
+offset_right = 554.0
+offset_bottom = 258.0
+scale = Vector2(2.41853, 1.86902)
+text = "Start"
+
+[node name="menuaudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_ohoxw")
+autoplay = true
+
+[connection signal="pressed" from="Quit_Button" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="Start_Button" to="." method="_on_start_button_pressed"]
